@@ -3,12 +3,51 @@ Udemy
 
 
 Principais comandos do git:
-    * git init
-    * git log
+    * git init : iniciar serviço do git na pasta
+    * git log : mostra todo commit realizado
+    * git diff: mostra toda modificação que foi realiza no projeto e certificar que está tudo ok
 
     * git status: verifica os status dos artigos;
     * git add "nome do arquivo": adiciona os arquivos para ser adicionado
-    * git commit -am "mensagem": "-a" para mandar direto e "m" para deixar uma mensgem; 
+    * git commit -am "mensagem": "-a" para mandar direto e "m" para deixar uma mensgem;
+    * git remote add origin https://github.com/maurolima92/Sala-de-Estudo.git 
     * git branch -M main
     * git push -u origin main
+
+Fez cagada? Cuidadooooo
+    * git checkout "nome do arquivo" : vai retornar o arquivo para antes da alteração e antes do git add
+    * git reset HEAD "nome do arquivo" : remover da fila do stage feito pelo git add "mome do arquivo"
+
+    Git reset
+    --soft : matar o commit e retomar para o stage prontinho para commitar novamente
+    --mixed : matar o commit e retomar para o stage modified
+    --hard : matar todos os commits já feito e retomar o arquivo antes do primeiro commit
+
+Clonando pasta de repositorios
+    * git clone git@github.com:maurolima92/Sala-de-Estudo.git "nome da pasta"
+
+Criando chave SSH - Git e Github para Iniciantes
+    Url de apoio: https://hcode.com.br/blog/adicionando-uma-chave-ssh-ao-github
+
+    * Abrir bash comand
+    * ssh-keygen -t rsa -b 4096 -C "Email da conta do github"
+    * Apertar tecla enter para confirmar as etapas
+    * No password ou passphrase aperar enter novamente para não colocar senha
+
+    Para vincular a chave ssh ao git hub:
+    * cd ~/.ssh : ir para raiz do diretorio
+    * Precisamos colcoar no github o id_rsa.pub para isso digitar:
+        * cat id_rsa.pub
+    * Copiar a chave todo código "id_rsa.pub" e abrir o navegado o github
+
+    Vinculando a chave ssh no Github:
+    * Clicar na foto de perfil e ir em settings
+    * Clicar no menu lateral SSH and GPS Keys
+    * Clicar no botão New SSH Keys
+    * Cola o código que copiamos do arquivo id_rsa.pub e nomeamos o Title para referenciar
+    o pc que está sendo configurado
+
+Fork
+    Objetivo é criar uma cópia do outro projeto para trabalhar simutaneamente e depois mandar
+    as motificações para o usuário titular do projeto ou da organizaçaõ.
 .
