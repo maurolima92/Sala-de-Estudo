@@ -1,0 +1,12 @@
+#Curso git para Iniciante
+Udemy
+
+
+Principais comandos do git:
+    * git init
+    * git log
+
+    * git status: verifica os status dos artigos;
+    * git add "nome do arquivo": adiciona os arquivos para ser adicionado
+    * git commit -am "mensagem": "-a" para mandar direto e "m" para deixar uma mensgem; 
+    * git push origin "master ou main": git está usando o main para fazer o push
