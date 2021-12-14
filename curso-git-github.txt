@@ -11,3 +11,4 @@ Principais comandos do git:
     * git commit -am "mensagem": "-a" para mandar direto e "m" para deixar uma mensgem; 
     * git branch -M main
     * git push -u origin main
+.
