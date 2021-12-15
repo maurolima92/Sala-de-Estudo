@@ -1,27 +1,27 @@
 #Curso git para Iniciante
 Udemy
 
-
 Principais comandos do git:
     * git init : iniciar serviço do git na pasta
     * git log : mostra todo commit realizado
     * git diff: mostra toda modificação que foi realiza no projeto e certificar que está tudo ok
+    * git log --graph : mostra historio de cada commit e como foi dividido pelos branches
 
     * git status: verifica os status dos artigos;
     * git add "nome do arquivo": adiciona os arquivos para ser adicionado
     * git commit -am "mensagem": "-a" para mandar direto e "m" para deixar uma mensgem;
     * git remote add origin https://github.com/maurolima92/Sala-de-Estudo.git 
-    * git branch -M main
-    * git push -u origin main
+    * git branch -M main (apenas a primeira vez)
+    * git push -u origin "main/master" (utilizar apena um dentro das aspas, precisa verifica qual branch seu bash está utilizando)
 
-Fez cagada? Cuidadooooo
-    * git checkout "nome do arquivo" : vai retornar o arquivo para antes da alteração e antes do git add
-    * git reset HEAD "nome do arquivo" : remover da fila do stage feito pelo git add "mome do arquivo"
+Fez cagada manito? Cuidadooooo
+    * git checkout "nome do arquivo" : vai retornar o arquivo para antes da alteração e antes do git add "nome do arquivo"
+    * git reset HEAD "nome do arquivo" : remover da fila do stage feito pelo git add "nome do arquivo"
 
-    Git reset
-    --soft : matar o commit e retomar para o stage prontinho para commitar novamente
-    --mixed : matar o commit e retomar para o stage modified
-    --hard : matar todos os commits já feito e retomar o arquivo antes do primeiro commit
+    Git reset:
+        * --soft : matar o commit e retomar para o stage prontinho para commitar novamente
+        * --mixed : matar o commit e retomar para o stage modified
+        * --hard : matar todos os commits já feito e retomar o arquivo antes do primeiro commit
 
 Clonando pasta de repositorios
     * git clone git@github.com:maurolima92/Sala-de-Estudo.git "nome da pasta"
@@ -50,4 +50,44 @@ Criando chave SSH - Git e Github para Iniciantes
 Fork
     Objetivo é criar uma cópia do outro projeto para trabalhar simutaneamente e depois mandar
     as motificações para o usuário titular do projeto ou da organizaçaõ.
-.
+
+Ramificação (branch)
+    Principais comando dos branch
+        * git checkout -b "nome do branch" : para criar um novo branch
+        * git branch : mostra todos os branch e destaca o branch que você está neste momento
+        * git checkout "nome do branch" : para mudar de branch
+        * git branch -D "nome do branch" : para excluir um branch
+
+    Fazendo Merge e Rebase (Unir Branches)
+
+    Diferença é que o merge cria um commit para unir os branchs e o rebase uni os branch sem criar um novo commit,
+    porém o rebase perde a ordem cronologica das ações, mas ganha um hitórico linear.
+
+    Exemplo merge
+        * Criar um arquivo no branch main e fazer um git commit
+        * Criar um "novo branch" e criar um outro arquivo e fazer um git commit
+        * Voltar ao branch main e criar um novo arquivo e fazer um git commit
+        * No branch main fazer um git log para acompanhar a ordem (apenas 2 arquivos, pq o outro está em outro branch)
+        * Fazer um git MERGE nome do "novo branch" criado
+        * Fazer um git log para acompanhar todos os commits mesclados com historio linear
+        * Fazer um git log --graph
+
+    MERGE - No branch main:
+        * git merge "nome do branch"
+        * Vais ser criado um novo commit para adicionar o o branch do merge acima
+        git log --graph
+
+    Exemplo Rebase
+        * Criar um arquivo no branch main e fazer um git commit
+        * Criar um "novo branch" e criar um outro arquivo e fazer um git commit
+        * Voltar ao branch main e criar um novo arquivo e fazer um git commit
+        * No branch main fazer um git log para acompanhar a ordem (apenas 2 arquivos, pq o outro está em outro branch)
+        * Fazer um git REBASE nome do "novo branch" criado
+        * Fazer um git log para acompanhar todos os commits mesclados com historio linear
+        * Fazer um git log --graph
+    
+    REBASE - No branch main
+        * gir rebase "nome do branch"
+        * Os branches vão ser alocados junto ao main de forma sequencial ao invés de mostrar as ramificações
+        criadas, perdendo o historio linear do que foi feito.
+        * git log --graph
