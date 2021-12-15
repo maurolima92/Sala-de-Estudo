@@ -128,3 +128,23 @@ Extras: Git Ignore, Git Stash, Alias, Versionamento de tags e Git Revert
 
         * git tag -a 1.0.0 -m "Mensagem que desejar"
         * git push oringin main --tags 
+
+    Git Revert
+        O comando git revert é usado para desfazer alterações ao histórico de commits do repositório. 
+        Outros comandos de "desfazer", como o git checkout e o git reset , movem os indicadores de referência 
+        do HEAD e do branch para commits especificados.
+
+        * Fazer o git log para pegar o id do commit
+        * se quiser dar um git show "id do commit" vai mostrar o que foi realizado naquel commit
+        * git revert "id do commit" : para reverter o commit, vai mostrar no git log que reverteu as alterações
+        e você pode analisar as mudanças que tinha naquele commit.
+        * git show "id do novo commit revert" para ver o que foi removido
+
+        Diferença entre o REVERT e o RESET é que o "RESET" apaga TODAS as mudanças realizadas no historioco do commit, 
+        enquando o REVERT deixa listado no novo commit o que foi removido.
+
+    Apagando tags e branches remoto
+
+        * git tag -d "versao" : apagando local
+        * git push origin :"versao" : apagando tag remoto
+        * git push origin :"nome do branch" : apagando branch remoto
