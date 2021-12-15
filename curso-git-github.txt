@@ -14,7 +14,7 @@ Principais comandos do git:
     * git branch -M main (apenas a primeira vez)
     * git push -u origin "main/master" (utilizar apena um dentro das aspas, precisa verifica qual branch seu bash está utilizando)
 
-Fez cagada manito? Cuidadooooo
+Fez cagada manito? Cuidadooooo com Reset
     * git checkout "nome do arquivo" : vai retornar o arquivo para antes da alteração e antes do git add "nome do arquivo"
     * git reset HEAD "nome do arquivo" : remover da fila do stage feito pelo git add "nome do arquivo"
 
@@ -51,7 +51,7 @@ Fork
     Objetivo é criar uma cópia do outro projeto para trabalhar simutaneamente e depois mandar
     as motificações para o usuário titular do projeto ou da organizaçaõ.
 
-Ramificação (branch)
+Ramificação, Merges e Rebases (branch)
     Principais comando dos branch
         * git checkout -b "nome do branch" : para criar um novo branch
         * git branch : mostra todos os branch e destaca o branch que você está neste momento
@@ -91,3 +91,40 @@ Ramificação (branch)
         * Os branches vão ser alocados junto ao main de forma sequencial ao invés de mostrar as ramificações
         criadas, perdendo o historio linear do que foi feito.
         * git log --graph
+
+Extras: Git Ignore, Git Stash, Alias, Versionamento de tags e Git Revert
+
+    Git Ignore: 
+        gitignore é um arquivo que criamos na raiz do nosso projeto para poder ignorar arquivos e pastas do
+        versionamento. Dentro do ".gitignore" colocamos todos os arquivos e pastas para serem ignorados pelo git.
+
+        * crair um arquivo ".gitignore" para listar os arquivos que irão ser ignorados
+        * Se usar o "*.extensão do arquivo" o git vai ignorar todos os arquivo daquela extensão, ex: "*.json"
+        * Para ignorar um arquivo especifico basta colocar o nome completo do arquivo, ex: "template.css"
+
+        #Ajuda - Repositorios de varias aplicações mostrando quais arquivos precisam ser ignorados em cada uma
+        https://github.com/github/gitignore
+
+    Git Stash
+        git stash arquiva (ou faz o stash) de alterações que você fez na cópia de trabalho durante um
+        determinado período, para que você possa trabalhar em outra coisa, depois voltar e fazer a reaplicação 
+        mais tarde.
+
+        * git stash
+        * git stash applay
+        * git stash list
+        * git stash clear
+
+    Alias
+        Feito para encurtar comando, você configura um alias e utiliza quando precisar
+
+        * git config --global alias.s status : quando digitar "git s" o git vai reconhecer meu alias e 
+        executará o comando git status 
+
+    Versionamento com tags
+        git tag é em geral usado para capturar um ponto no histórico que é usado para uma versão marcada 
+        (por exemplo, v1. 0.1). Um marcador é como uma ramificação que não muda. Diferente das ramificações, 
+        os marcadores depois de criados não têm mais histórico de commits. 
+
+        * git tag -a 1.0.0 -m "Mensagem que desejar"
+        * git push oringin main --tags 
